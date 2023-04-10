@@ -3,7 +3,7 @@ from todo.lib import Task, print_tasks
 tasks:list[Task] = []
 while True:
     print_tasks(tasks)
-    choice = int(input("[1] Create a new task\n[2] Mark task as complete\n[3] Edit task"))
+    choice = int(input("[1] Create a new task\n[2] Mark task as complete\n[3] Edit task\n[4] Delete task\n[5] Remove all complete tasks))
     
     if choice == 1:
         tasks.append(Task())
@@ -16,3 +16,12 @@ while True:
         date = input("Enter new date (mm/dd/yyyy) (leave empty to not change): ")
         
         task.update(title, desc, date)
+    elif choice == 4:
+        index = int(input("Enter index of task to delete"))
+        tasks.remove(index-1)
+    elif choice == 5:
+        tasks = [t for t in tasks if not t.done]
+                       
+                       
+                       
+                     
