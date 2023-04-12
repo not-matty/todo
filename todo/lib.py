@@ -18,6 +18,14 @@ class Task:
     def __str__(self):
         return f"[{'x' if self.done else ' '}] {self.title} {f'{self.time}' if self.time is not None else ''}"
     
+    def update(self, title: str, desc: str, date: str):
+        if title != "":
+            self.title = title
+        if desc != "":
+            self.desc = desc
+        if date != "":
+            self.date = datetime.strptime(date, "%d/%m/%y")
+    
 def print_tasks(tasks: list[Task]):
     for i,task in enumerate(tasks):
         print(i+1, task)
