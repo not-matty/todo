@@ -6,8 +6,8 @@ class Task:
     title: str = "New Task"
     desc: str = "New Description"
     done: bool = False
-    time: datetime | None = None
-    def __init__(self, title: str = "New Task", desc: str = "New Description", done: bool = False, time: datetime | None = None):
+    time: datetime = None
+    def __init__(self, title: str = "New Task", desc: str = "New Description", done: bool = False, time: datetime = None):
         self.title = title
         self.desc = desc
         self.done = done

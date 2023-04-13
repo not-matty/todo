@@ -10,8 +10,8 @@ while True:
         title = input("Enter new title (leave empty to not change): ")
         desc = input("Enter new desc (leave empty to not change): ")
         date = input("Enter new date (mm/dd/yyyy) (leave empty to not change): ")
-        
-        tasks[len(tasks)-1].update(title, desc, date)
+        index = int(len(tasks) - 1)
+        tasks[index].update(title, desc, date)
     elif choice == 2:
         index = int(input("Enter task index"))
         tasks[index-1].done = True
@@ -19,7 +19,7 @@ while True:
         index = int(input("Enter task index: "))
         title = input("Enter new title (leave empty to not change): ")
         desc = input("Enter new desc (leave empty to not change): ")
-        date = input("Enter new date (mm/dd/yyyy) (leave empty to not change): ")
+        date = input("Enter new date (dd/mm/yy) (leave empty to not change): ")
         
         tasks[index-1].update(title, desc, date)
     elif choice == 4:
