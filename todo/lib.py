@@ -17,7 +17,11 @@ class Task:
         return f"Task(title={self.title},desc={self.desc},done={self.done},time={self.time})"
     def __str__(self):
         return f"[{'x' if self.done else ' '}] {self.title} {f'{self.time}' if self.time is not None else ''}"
-    
+    def __update__(self, title: str = "New Task", desc: str = "New Description", time: datetime = None):
+        self.title = title
+        self.desc = desc
+        self.time = time
+        
 def print_tasks(tasks: list[Task]):
     for i,task in enumerate(tasks):
         print(i+1, task)

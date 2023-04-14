@@ -7,11 +7,11 @@ while True:
     
     if choice == 1:
         tasks.append(Task())
-        # title = input("Enter new title (leave empty to not change): ")
-        # desc = input("Enter new desc (leave empty to not change): ")
-        # date = input("Enter new date (mm/dd/yyyy) (leave empty to not change): ")
-        # index = int(len(tasks) - 1)
-        # tasks[index].update(title, desc, date)
+        title = input("Enter new title (leave empty to not change): ")
+        desc = input("Enter new desc (leave empty to not change): ")
+        date = input("Enter new date (dd/mm/yy) (leave empty to not change): ")
+        index = int(len(tasks) - 1)
+        tasks[index].__init__(title, desc, False, date)
     elif choice == 2:
         index = int(input("Enter task index"))
         tasks[index-1].done = True
@@ -21,7 +21,7 @@ while True:
         desc = input("Enter new desc (leave empty to not change): ")
         date = input("Enter new date (dd/mm/yy) (leave empty to not change): ")
         
-        tasks[index-1].update(title, desc, date)
+        tasks[index-1].__update__(title, desc, date)
     elif choice == 4:
         index = int(input("Enter index of task to delete"))
         tasks.remove(index-1)
